@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression and Smoke Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Zigwheels Page Test(failed)">
+    <classes>
+      <class name="BikesNCars.ZigWheels">
+        <methods>
+          <include name="NewBikes"/>
+          <include name="endReport"/>
+          <include name="search"/>
+        </methods>
+      </class> <!-- BikesNCars.ZigWheels -->
+    </classes>
+  </test> <!-- Zigwheels Page Test(failed) -->
+</suite> <!-- Failed suite [Regression and Smoke Suite] -->

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression and Smoke Suite">
+ 	<test name="NewBikesTest">
+ 		<classes>
+ 			<class name="BikesNCars.TestNewBikes"></class>
+ 		</classes>
+ 	</test>
+ 	<test name="UpcomingBikesTest">
+ 		<classes>
+ 			<class name="BikesNCars.TestUpcomingBike"></class>
+ 		</classes>
+ 	</test>
+ 	<test name="UsedCarsTest">
+ 		<classes>
+ 			<class name="BikesNCars.TestUsedCars"></class>
+ 		</classes>
+ 	</test>
+ 	<test name="LoginPageTest">
+ 		<classes>
+ 			<class name="BikesNCars.TestLoginPage"></class>
+ 		</classes>
+ 	</test>
+</suite> <!-- Suite -->

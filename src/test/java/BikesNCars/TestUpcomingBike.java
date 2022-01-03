@@ -13,7 +13,7 @@ public class TestUpcomingBike extends PageBaseClass
 {
 	UpcomingBikesPage upcomingBikes;
 	
-	@BeforeSuite(groups = "Smoke Test")
+	/*@BeforeSuite(groups = "Smoke Test")
 	public void openBrowser() {
 
 		try
@@ -25,7 +25,7 @@ public class TestUpcomingBike extends PageBaseClass
 			reportFail(e.getMessage());
 		}
 		
-	}
+	}*/
 	
 	@Test(priority = 1, groups = "upcomingbikes, Smoke Test")
 	public void mouseHover() throws InterruptedException

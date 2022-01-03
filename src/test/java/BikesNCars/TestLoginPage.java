@@ -21,7 +21,7 @@ public class TestLoginPage extends PageBaseClass {
 		return dataprovider.getCellData("Sheet1", colNum, rowNum);
 	}
 
-	@BeforeSuite(groups = "Smoke Test")
+	/*@BeforeSuite(groups = "Smoke Test")
 	public void openBrowser() {
 
 		try {
@@ -29,7 +29,7 @@ public class TestLoginPage extends PageBaseClass {
 		} catch (Exception e) {
 			reportFail(e.getMessage());
 		}
-	}
+	}*/
 
 	@Test(priority = 1, groups = ("Smoke Test"))
 	public void openLoginPage() throws InterruptedException {

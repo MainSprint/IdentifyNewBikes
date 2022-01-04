@@ -1,5 +1,7 @@
 package pageModels;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
@@ -133,12 +135,7 @@ public class UpcomingBikesPage extends PageBaseClass {
 						logger.log(Status.INFO,
 								"BikeName: " + Name + " BikePrice: RS." + Price + "Lakh Launch Data: " + LaunchDate);
 
-						WebElement bikeDetails = driver.findElement(By.xpath("//*[@id=\"modelList\"]/li[14]"));
-
-						String Details = bikeDetails.getText();
-						Details.split(" ");
-
-						WriteExcelSheet.writeUpcomingBikeData(Details);
+						
 					} else {
 						System.out.println("Price is Greater than Four Lakh");
 						System.out.println("================================================");
@@ -153,4 +150,25 @@ public class UpcomingBikesPage extends PageBaseClass {
 		}
 
 	}
+	
+	public static ArrayList<String> printModels() throws Exception {
+
+		//setWaitByPresence("//*[@id='modelList']/ul");
+		String models_list = driver
+				.findElement(By.xpath("//*[@id='modelList']"))
+				.getText();
+		ArrayList<String> models = new ArrayList<String>();
+		Collections.addAll(models, models_list.split("\n"));
+
+		// Printing the Popular used Cars in Chennai
+		
+		for (int i = 0; i < models.size(); i++) {
+			System.out.print((i + 1) + " " + models.get(i));
+
+			}
+				
+		return models;
+
+	}
+	
 }

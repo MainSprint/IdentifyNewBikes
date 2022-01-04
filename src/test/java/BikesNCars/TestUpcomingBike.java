@@ -78,6 +78,22 @@ public class TestUpcomingBike extends PageBaseClass
 		//endReport();
 	}
 	
+	@Test(priority = 5, groups = "Smoke Test", dependsOnMethods="bikesUnder4Lakhs")
+	public void list() throws Exception
+	{
+		logger = report.createTest("List in Excel Sheet");
+		logger.log(Status.INFO, "Upcoming Bikes Under 4 lakh list");
+
+				
+		ArrayList<String> models = upcomingBikes.printModels();
+		logger.log(Status.PASS, "List of Used Car.");
+
+		WriteExcelSheet.writeData(models, "UpcomingBikes", "List of Used cars in Chennai", "UpcomingBikesUnder4Lakhs.xlsx");
+		logger.log(Status.PASS, "Test Executed Successfully");
+
+		
+	}
+	
 	/*@AfterSuite(groups = "Smoke Test")
 	public void closeBrowser()
 	{

@@ -88,7 +88,7 @@ public class TestUpcomingBike extends PageBaseClass
 		ArrayList<String> models = upcomingBikes.printModels();
 		logger.log(Status.PASS, "List of Used Car.");
 
-		WriteExcelSheet.writeData(models, "UpcomingBikes", "List of Used cars in Chennai", "UpcomingBikesUnder4Lakhs.xlsx");
+		WriteExcelSheet.writeData(models, "UpcomingBikes", "List of Upcoming Bikes", "UpcomingBikes.xlsx");
 		logger.log(Status.PASS, "Test Executed Successfully");
 
 		

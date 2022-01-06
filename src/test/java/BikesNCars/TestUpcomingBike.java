@@ -1,5 +1,7 @@
 package BikesNCars;
 
+import java.util.ArrayList;
+
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -7,25 +9,14 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import BaseClasses.PageBaseClass;
+import BaseClasses.WriteExcelSheet;
 import pageModels.UpcomingBikesPage;
 
 public class TestUpcomingBike extends PageBaseClass
 {
 	UpcomingBikesPage upcomingBikes;
 	
-	/*@BeforeSuite(groups = "Smoke Test")
-	public void openBrowser() {
-
-		try
-		{
-		invokeBrowser("chrome");
-		}
-		catch(Exception e)
-		{
-			reportFail(e.getMessage());
-		}
-		
-	}*/
+	
 	
 	@Test(priority = 1, groups = "upcomingbikes, Smoke Test")
 	public void mouseHover() throws InterruptedException
@@ -67,15 +58,16 @@ public class TestUpcomingBike extends PageBaseClass
 	
 	
 	@Test(priority = 4, groups = "Regression Test", dependsOnMethods="viewMore")
-	public void bikesUnder4Lakhs() throws InterruptedException
+	public void bikesUnder4Lakhs() throws Exception
 	{
 		logger = report.createTest("Upcoming Bikes Under 4 lakh list");
 		logger.log(Status.INFO, "Upcoming Bikes Under 4 lakh list");
 
 		upcomingBikes.upcomingbikes();
+		
 		logger.log(Status.PASS, "Test Executed Successfully");
 		
-		//endReport();
+				
 	}
 	
 	@Test(priority = 5, groups = "Smoke Test", dependsOnMethods="bikesUnder4Lakhs")
@@ -86,7 +78,7 @@ public class TestUpcomingBike extends PageBaseClass
 
 				
 		ArrayList<String> models = upcomingBikes.printModels();
-		logger.log(Status.PASS, "List of Used Car.");
+		logger.log(Status.PASS, "List of UpComing Bikes.");
 
 		WriteExcelSheet.writeData(models, "UpcomingBikes", "List of Upcoming Bikes", "UpcomingBikes.xlsx");
 		logger.log(Status.PASS, "Test Executed Successfully");
@@ -94,9 +86,5 @@ public class TestUpcomingBike extends PageBaseClass
 		
 	}
 	
-	/*@AfterSuite(groups = "Smoke Test")
-	public void closeBrowser()
-	{
-		closeBrowser();
-	}*/
+	
 }

@@ -161,12 +161,12 @@ public class UpcomingBikesPage extends PageBaseClass {
 		Collections.addAll(models, models_list.split("\n"));
 
 		// Printing the Popular used Cars in Chennai
-		
 		for (int i = 0; i < models.size(); i++) {
 			System.out.print((i + 1) + " " + models.get(i));
 
 			}
-				
+		System.out.println("================================================");
+
 		return models;
 
 	}
